@@ -47,10 +47,15 @@ jobs:
       shell: bash
       run: |
         cmake \
-        -S ${{ github.workspace }} \
+        -S . \
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
         -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX  
+        cd test
+        cmake \
+        -S . \
+        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
         
     - name: Build library
       run: cmake . && make
