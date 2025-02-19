@@ -44,7 +44,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Configure cmake using ${{ matrix.c_compiler }}
+    - name: Configure CMake using ${{ matrix.c_compiler }}
       shell: bash
       run: |
         cmake \
