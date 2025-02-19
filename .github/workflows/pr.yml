@@ -42,15 +42,15 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Configure cmake using ${{ matrix.c_compiler }}
-      run: >
-        cmake
-        -S ${{ github.workspace }}
-        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
-        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+      run: |
+        cmake \
+        -S ${{ github.workspace }} \
+        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
         -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX  
-        cmake
-        -S ${{ github.workspace }}/test
-        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
+        cmake \
+        -S ${{ github.workspace }}/test \
+        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
         
     - name: Build library
