@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.10)
+
+PROJECT(TEST)
+INCLUDE_DIRECTORIES(..)
+LINK_DIRECTORIES(../build)
+ADD_EXECUTABLE(test test.c)
+
+TARGET_LINK_LIBRARIES(test sum)
+
