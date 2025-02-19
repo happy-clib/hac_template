@@ -7,6 +7,7 @@ on:
     branches: [ "main" ]
 env:
   INSTALL_PREFIX: /usr
+
 jobs:
   build_test:
     strategy:
