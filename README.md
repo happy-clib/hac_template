@@ -4,7 +4,25 @@
 
 A **C** library project template based on [CMake](https://cmake.org/).
 
+## Directory tree
+
+```shell
+root/
+  |-- src/
+    |-- sum.h # sample header file
+    |-- sum.c # sample source file
+    |-- CMakeLists.txt # for building shared libraries
+  |-- test/
+    |-- test.c # define unit test cases
+    |-- CMakeLists.txt # for building and running unit test
+  |-- fuzz/
+    |-- CMakeLists.txt # for building and running fuzz test
+  |-- ...
+```
+
 ## Installation
+
+> This template uses `CMake` and `make` to build and install libraries.
 
 ```shell
 # Configure CMake
@@ -18,9 +36,11 @@ cmake \
 sudo make install
 ```
 
-After installation, the header files are in `/usr/include/sum` while the static and dynamic libraries are in the `/usr/lib`.
+After installation, the header files are in the `/usr/include/sum` while the static and dynamic libraries are in the `/usr/lib`.
 
 ## Usage
+
+> The following is sample code usage description:
 
 ```c
 #include <stdio.h>
@@ -34,6 +54,8 @@ int main() {
 
 ## API
 
+> The following is sample code API description:
+
 ### `int sum(int a, int b)`
 
 Calculate two `integer`s sum.
@@ -43,7 +65,7 @@ Calculate two `integer`s sum.
 
 |workflow|trigger|tasks|
 |----|-----|----|
-|[pr.yml](/.github/workflows/pr.yml)|pull requests or new push to `main`|check compiling and unit test|
+|[pr.yml](/.github/workflows/pr.yml)|pull requests or new push to `main`|check building and unit test|
 
 
 ## CHANGELOG
