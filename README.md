@@ -22,7 +22,7 @@ root/
 
 ## Installation
 
-> This template uses `CMake` and `make` to build and install libraries.
+> This template uses `CMake` to build and install libraries.
 
 ```shell
 # Create output dir
