@@ -53,6 +53,7 @@ jobs:
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
         -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
+        ls
         make
 
     - name: Test library on non-windows 
