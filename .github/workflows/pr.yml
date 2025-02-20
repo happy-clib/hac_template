@@ -56,7 +56,7 @@ jobs:
     - name: Test library on ${{ matrix.os }}
       if: ${{ !contains(matrix.os, 'windows')}}
       run: |
-        pwd
+        ls build/test
         ./build/test/test
 
     - name: Test library on ${{ matrix.os }}
