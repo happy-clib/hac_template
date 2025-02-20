@@ -44,7 +44,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
         
-    - name: Build library using ${{ matrix.c_compiler }}
+    - name: Configure CMake 
       shell: bash
       run: |
         mkdir build
@@ -53,8 +53,10 @@ jobs:
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
         -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX
-        ls
-        make
+
+    - name: Build library
+      shell: bash
+      run: cmake --build ./build --config ${{ matrix.build_type }}
 
     - name: Test library on non-windows 
       if: ${{ !contains(matrix.os, 'windows')}}
@@ -67,4 +69,4 @@ jobs:
 
     - name: Test installation
       if: ${{ contains(matrix.os, 'ubuntu') }}
-      run: cd build && sudo make install
+      run: sudo cmake --install ./build

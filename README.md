@@ -34,7 +34,7 @@ cmake .. \
   -DCMAKE_BUILD_TYPE=Release 
 
 # Install
-sudo make install
+sudo cmake --install . 
 ```
 
 After installation, the header files are in the `/usr/include/sum` while the static and dynamic libraries are in the `/usr/lib`.
