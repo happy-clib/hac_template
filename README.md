@@ -25,9 +25,10 @@ root/
 > This template uses `CMake` and `make` to build and install libraries.
 
 ```shell
+# Create output dir
+mkdir build && cd build
 # Configure CMake
-cmake \
-  -S . \
+cmake .. \
   -DCMAKE_C_COMPILER=gcc \ # choose a c compiler
   -DCMAKE_INSTALL_PREFIX=/usr \ # target install directory path prefix
   -DCMAKE_BUILD_TYPE=Release 
