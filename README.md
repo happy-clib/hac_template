@@ -68,8 +68,6 @@ Calculate two `integer`s sum.
 |workflow|trigger|tasks|
 |----|-----|----|
 |[pr.yml](/.github/workflows/pr.yml)|pull requests or new push to `main`|check building and unit test across platforms|
+|[renovate.json](/.github/renovate.json)|weekly|detect if there are new versions of dependencies|
 
 
-## CHANGELOG
-
-TODO
