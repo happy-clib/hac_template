@@ -4,7 +4,7 @@
   "commitMessagePrefix": "chore: ",
   "commitMessageTopic": "{{depName}} version",
   "extends": [
-    "config:base",
+    "config:recommended",
     "group:allNonMajor",
     "schedule:weekly",
     ":preserveSemverRanges",
