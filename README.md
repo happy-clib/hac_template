@@ -22,18 +22,20 @@ root/
 
 ## Installation
 
-> This template uses `CMake` and `make` to build and install libraries.
+> This template uses `CMake` to build and install libraries.
 
 ```shell
+# Create output dir
+mkdir build && cd build
+
 # Configure CMake
-cmake \
-  -S . \
+cmake .. \
   -DCMAKE_C_COMPILER=gcc \ # choose a c compiler
   -DCMAKE_INSTALL_PREFIX=/usr \ # target install directory path prefix
   -DCMAKE_BUILD_TYPE=Release 
 
 # Install
-sudo make install
+sudo cmake --install . 
 ```
 
 After installation, the header files are in the `/usr/include/sum` while the static and dynamic libraries are in the `/usr/lib`.
@@ -65,9 +67,7 @@ Calculate two `integer`s sum.
 
 |workflow|trigger|tasks|
 |----|-----|----|
-|[pr.yml](/.github/workflows/pr.yml)|pull requests or new push to `main`|check building and unit test|
+|[pr.yml](/.github/workflows/pr.yml)|pull requests or new push to `main`|check building and unit test across platforms|
+|[renovate.json](/.github/renovate.json)|weekly|detect if there are new versions of dependencies|
 
 
-## CHANGELOG
-
-TODO
