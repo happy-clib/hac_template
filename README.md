@@ -27,6 +27,7 @@ root/
 ```shell
 # Create output dir
 mkdir build && cd build
+
 # Configure CMake
 cmake .. \
   -DCMAKE_C_COMPILER=gcc \ # choose a c compiler
@@ -66,7 +67,7 @@ Calculate two `integer`s sum.
 
 |workflow|trigger|tasks|
 |----|-----|----|
-|[pr.yml](/.github/workflows/pr.yml)|pull requests or new push to `main`|check building and unit test|
+|[pr.yml](/.github/workflows/pr.yml)|pull requests or new push to `main`|check building and unit test across platforms|
 
 
 ## CHANGELOG
